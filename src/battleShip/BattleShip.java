@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class BattleShip extends Application{
 	
+	public static int userShipLength = 5;
+	
 	public static Label lblStatus = new Label("Igraj posteno.");
 	public static Button btStart = new Button("Start");
 	
@@ -21,7 +23,6 @@ public class BattleShip extends Application{
 		
 		
 		boardUser = new Board();
-		boardUser.userPlaceShips();
 		
 		boardComp = new Board();
 		boardComp.placeEnemyShips();

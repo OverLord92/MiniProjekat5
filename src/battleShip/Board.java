@@ -6,7 +6,7 @@ public class Board extends GridPane {
 	Cell[][] board = new Cell[10][10];
 
 	public void placeEnemyShips() {
-		int shipLength = 5;
+		int enemyShipLength = 5;
 
 		do {
 			// ako je horizontal == 1 brod se postavlja horizontalno
@@ -24,9 +24,9 @@ public class Board extends GridPane {
 					isFree = true;
 					i = (int) (Math.random() * 10);
 
-					j = (int) (Math.random() * (10 - shipLength));
+					j = (int) (Math.random() * (10 - enemyShipLength));
 
-					for (int k = j; k < j + shipLength; k++) {
+					for (int k = j; k < j + enemyShipLength; k++) {
 						if (board[i][k].token != 1) {
 							isFree = false;
 						}
@@ -34,7 +34,7 @@ public class Board extends GridPane {
 
 				} while (!isFree);
 
-				for (int k = j; k < j + shipLength; k++) {
+				for (int k = j; k < j + enemyShipLength; k++) {
 					// board[i][k].placeShip();
 					board[i][k].token = 2;
 				}
@@ -45,42 +45,33 @@ public class Board extends GridPane {
 				boolean isFree = false;
 				do {
 					isFree = true;
-					i = (int) (Math.random() * (10 - shipLength));
+					i = (int) (Math.random() * (10 - enemyShipLength));
 
 					j = (int) (Math.random() * 10);
 
-					for (int k = i; k < i + shipLength; k++) {
+					for (int k = i; k < i + enemyShipLength; k++) {
 						if (board[k][j].token != 1) {
 							isFree = false;
 						}
 					}
 				} while (!isFree);
 
-				for (int k = i; k < i + shipLength; k++) {
+				for (int k = i; k < i + enemyShipLength; k++) {
 					board[k][j].token = 2;
 				}
 			}
 
-			shipLength--;
-		} while (shipLength > 0);
+			enemyShipLength--;
+		} while (enemyShipLength > 0);
 
 	}
-	
-	public void userPlaceShips(){
-		int shipLength = 5;
-		
-		
-		
-
-	}
-	
 	
 	
 
 	Board() {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++)
-				this.add(board[i][j] = new Cell(), i, j);
+				this.add(board[i][j] = new Cell(i, j), i, j);
 		}
 
 	}
