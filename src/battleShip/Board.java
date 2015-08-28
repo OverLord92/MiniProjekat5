@@ -1,9 +1,6 @@
 package battleShip;
 
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Ellipse;
 
 public class Board extends GridPane {
 	Cell[][] board = new Cell[10][10];
@@ -74,7 +71,7 @@ public class Board extends GridPane {
 		
 		
 		
-//		BattleShip.gameStarted = true;
+
 	}
 	
 	

@@ -1,5 +1,8 @@
 package battleShip;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
@@ -15,6 +18,17 @@ public class Cell extends Pane {
 		token = 1;
 		setStyle("-fx-border-color: black");
 		this.setPrefSize(800, 800);
+		
+		this.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override // Override the handle method
+			public void handle(MouseEvent e) {
+			
+				
+				
+			 }
+			 });
+		
+		
 		this.setOnMouseClicked(e -> {
 			if (!BattleShip.gameStarted)
 				handleMouseClickPreGame();
