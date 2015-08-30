@@ -61,7 +61,7 @@ public class Hangman {
 
 		// pirntanje poruke korisniku ukoliko je on pobjedio
 		if (isWon()) {
-			System.out.println("Pobijedili ste. Rijec je: " + word);
+			System.out.println("Pobjedili ste. Rijec je: " + word);
 		}
 
 		input.close();
